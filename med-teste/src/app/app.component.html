@@ -1,20 +1,20 @@
 <div [ngStyle]="{'font-size': tfonte + 'px'}">
-  <barra-topo></barra-topo>
+  <header></header>
 
-  <div class="size-fontes">
-    <a class="size-fontes--aumentar" (click)="aumentarFonte()">A+</a>
+  <div class="fontes">
+    <a class="fonte-maior" (click)="fonteMaior()">A+</a>
     &nbsp;
-    <a class="size-fontes--diminuir" (click)="diminuirFonte()">A-</a>
+    <a class="fonte-menor" (click)="fonteMenor()">A-</a>
   </div>
 
-  <div class="menu-simulados">
+  <div class="menu">
     <h4>Simulados de 2008</h4>
-    <menu-simulados (bindSim)="bindSimulado=$event" (bindMarcador)="bindMarcador=$event"></menu-simulados>
+    <menu (onSimulator)="onSimulator=$event" (onMark)="onMark=$event"></menu>
   </div>
 
-  <div class="dados-simulado" [hidden]="!bindMarcador">
+  <div class="dados" [hidden]="!onMark">
 
-    <h2>{{bindSimulado}}</h2>
+    <h2>{{onSimulator}}</h2>
 
     <p>Os resultados do simulado são atualizados diariamente, na medida em que os cartões-resposta e as provas
       discursivas
@@ -24,12 +24,12 @@
       (cidade).
     </p>
 
-    <div class="pesquisar">
+    <div class="search">
       <span class="pesquisar--texto">Entre com sua matrícula: </span>
       <input type="number" [(ngModel)]="matrBusca" />
-      <button type="button" (click)="buscaMatr(); exibir=true">procurar</button>
+      <button type="button" (click)="buscaMatr(); displayed=true">procurar</button>
       <br />
-      <div *ngIf="exibir">
+      <div *ngIf="displayed">
         <div *ngIf="resulBusca!=''; else naoEncontrado">{{matrBusca}} localizado! A sua nota foi: {{resulBusca}}.</div>
         <ng-template #naoEncontrado>Sua matrícula não foi localizada ou sua nota ainda não foi processada.</ng-template>
       </div>
@@ -61,17 +61,16 @@
 
   </div>
 
-  <div [hidden]="!bindMarcador">
-    <span class="esquerda">
+  <div [hidden]="!onMark">
+    <span class="margem">
       <br />
-      <button class="estilo-link" printTitle="Resultados de simulados" printSectionId="ranking" ngxPrint>imprimir</button> | <a href="">enviar para um amigo</a>
+      <button class="link" printTitle="Resultados de simulados" printSectionId="ranking" ngxPrint>imprimir</button> | <a href="">enviar para um amigo</a>
     </span>
 
-    <!-- <barra-simulados></barra-simulados> -->
 
-    <ranking id="ranking" [parentData]="[filtroEspecialidade, filtroTurma, filtroFilial]"></ranking>
+    <position id="ranking" [parentData]="[filtroEspecialidade, filtroTurma, filtroFilial]"></position>
 
-    <!-- <barra-simulados></barra-simulados> -->
+  
 
   </div>
 

@@ -2,57 +2,54 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  .size-fontes {
+  .fontes {
     display: flex;
     width: 100%;
-    color: white;
+    color: #fff;
   
     font-family: Arial, Helvetica, sans-serif
   }
   
-  .size-fontes--aumentar {
+  .fonte-maior {
     width: 1.4rem;
     height: 1.2rem;
-    background-color: gray;
+    background-color: #707070;
     text-align: center;
     font-size: 1rem;
   }
   
-  .size-fontes--diminuir {
+  .fonte-menor {
     width: 1.4rem;
     height: 1.2rem;
-    background-color: gray;
+    background-color: #707070;
     text-align: center;
     font-size: 1rem;
   }
   
-  .menu-simulados {
+  .menu {
     width: 29.99999%;
-    color: black;
+    color: #000;
     height: auto;
     float: left;
   }
   
-  .dados-simulado {
+  .dados {
     width: 69.99999%;
-    color: black;
+    color: #000;
     height: auto;
     float: right;
   }
   
-  .esquerda {
-    float: left;
+  .margem {
+   margin-left: 100%;
   }
   
-  .direita {
-    float: right;
+  .search {
+    background-color: #e4f3fa;
+    height: 40px;
   }
   
-  .pesquisar {
-    background-color: #deeef5;
-  }
-  
-  .estilo-link {
+  .link {
       color: -webkit-link;
       cursor: pointer;
       text-decoration: underline;

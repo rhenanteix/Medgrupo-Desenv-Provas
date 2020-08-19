@@ -1,0 +1,33 @@
+.posicao {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+  }
+  
+  .th-tabela {
+    font-size: .8rem;
+    font-weight: bold;
+    background-color: #c7c4c4;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: #000;
+  }
+  
+  th, td {
+    text-align: center;
+  }
+
+  .direita {
+    float: right;
+  }
+
+  .color-table {
+    background-color: #ddd9d9;
+  }
+  

@@ -1,4 +1,6 @@
-export class ResultadosService {
+import { Injectable } from "@angular/core";
+@Injectable()
+export class ResultadoService {
 
     getResultados() {
         return [

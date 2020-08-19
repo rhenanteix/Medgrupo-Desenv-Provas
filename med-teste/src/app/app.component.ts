@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ResultadosService } from './resultado.service';
+import { ResultadoService } from './resultado.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,16 @@ import { ResultadosService } from './resultado.service';
 })
 
 export class AppComponent {
-  title = 'BackFront';
+  title = 'MedTeste';
 
-  public bindSimulado: any = 'Nenhum simulado selecionado';
-  public bindMarcador = false;
+  public onSimulator: any = 'Nenhum simulado selecionado';
+  public onMark = false;
 
   public filtroEspecialidade = '';
   public filtroTurma = '';
   public filtroFilial = '';
 
-  exibir;
+  displayed;
 
   tfonte: number = 15;
 
@@ -27,12 +27,12 @@ export class AppComponent {
 
   resultados: { id: number; nota: number; matricula: number; especialidade: string; turma: string; filial: string; }[];
 
-  constructor(service: ResultadosService) {
+  constructor(service: ResultadoService) {
     this.resultados = service.getResultados();
   }
 
   buscaMatr() {
-    this.resulBusca = this.resultados.filter(el => el.matricula == this.matrBusca).map(el => el.nota);
+    this.resulBusca = this.resultados.filter(m => m.matricula == this.matrBusca).map(m => m.nota);
   }
 
   attEspecialidade(event: any){
@@ -47,11 +47,11 @@ export class AppComponent {
     this.filtroFilial = event.target.value;
   }
 
-  aumentarFonte() {
+  fonteMaior() {
     this.tfonte = this.tfonte + 1;
   }
 
-  diminuirFonte() {
+  fonteMenor() {
     this.tfonte = this.tfonte - 1;
   }
 

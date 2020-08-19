@@ -1,18 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {NgxPrintModule} from 'ngx-print';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
+import { BarSimuladoComponent } from './bar-simulado/bar-simulado.component';
+import { PositionComponent } from './position/position.component';
+import { SimuladoService } from './simulado.service';
+import { ResultadoService } from './resultado.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    MenuComponent,
+    BarSimuladoComponent,
+    PositionComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    NgxPrintModule,
   ],
-  providers: [],
+  providers: [
+    SimuladoService,
+    ResultadoService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
